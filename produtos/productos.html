@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Filtrado</title>
+    <link rel="stylesheet" href="../css/app.css">
+</head>
+<body>
+
+    <div class="filtros">
+        <input type="text" id="busquedaNombre" placeholder="Buscar por nombre">
+        
+        <select id="filtroCategoria">
+            <option value="todos">Todas las categorías</option>
+            <option value="electronica">Electrónica</option>
+            <option value="hogar">Hogar</option>
+        </select>
+
+        <label>Precio máx: $<span id="valorPrecio">1000</span></label>
+        <input type="range" id="filtroPrecio" min="0" max="1000" value="1000">
+
+        <label><input type="checkbox" id="filtroStock"> Solo en stock</label>
+    </div>
+
+    <div id="listaProductos" class="grid-container"></div>
+
+    <script src="productos.js"></script>
+</body>
+</html> 

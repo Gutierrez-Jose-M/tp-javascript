@@ -1,0 +1,86 @@
+/* (a) Variables CSS con paleta coherente */
+:root {
+    --primary-color: #2563eb;
+    --bg-color: #ccd6ff;
+    --card-bg: #ffffff;
+    --text-main: #01060f;
+    --error-bg: #e77c7c;
+    --error-border: #ef4444;
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    --radius: 12px;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+.search-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px 20px;
+    border: 2px solid #00070f;
+    border-radius: var(--radius);
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.search-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.loading-text {
+    text-align: center;
+    font-weight: bold;
+    animation: pulse 1.5s infinite; /* Texto pulsante */
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.error-message {
+    background-color: var(--error-bg);
+    border: 1px solid var(--error-border);
+    color: #b91c1c;
+    padding: 15px;
+    border-radius: var(--radius);
+    text-align: center;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px;
+    color: #000307;
+}
